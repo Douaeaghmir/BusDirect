@@ -76,38 +76,38 @@
                 </div>
 
                 <div class="grid grid-cols-4 gap-x-2 gap-y-3">
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">01</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">02</button>
+                    <button type="button"   class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">01</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">02</button>
                     <div></div>
-                    <button type="button" class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">03</button>
+                    <button type="button"  class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">03</button>
 
-                    <button type="button" class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">04</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">05</button>
+                    <button type="button"  class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">04</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">05</button>
                     <div></div>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">06</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">06</button>
 
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">07</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">08</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">07</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">08</button>
                     <div></div>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">09</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">09</button>
 
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">10</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">11</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">10</button>
+                    <button type="button" class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">11</button>
                     <div></div>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">12</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">12</button>
 
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">13</button>
-                    <button type="button" class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">14</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">13</button>
+                    <button type="button"  class="h-12 rounded border border-red-200 bg-red-100 text-sm text-red-600">14</button>
+                    <div></div> 
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">15</button>
+
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">16</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">17</button>
                     <div></div>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">15</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">18</button>
 
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">16</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">17</button>
-                    <div></div>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">18</button>
-
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">19</button>
-                    <button type="button" class="h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">20</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">19</button>
+                    <button type="button"  class="seat h-12 rounded border border-gray-300 bg-white text-sm hover:bg-gray-100">20</button>
                 </div>
             </div>
 
@@ -117,7 +117,7 @@
         </section>
         <section class="rounded bg-white p-4">
             <h2 class="mb-4 text-lg font-semibold">Réserver une place</h2>
-            <form>
+            <form id="reservationForm">
                 <div class="mb-3">
                     <label for="nom" class="mb-1 block text-sm">Nom complet</label>
                     <input id="nom" type="text" placeholder="Votre nom"
@@ -219,5 +219,6 @@
         <footer class="bg-white p-4 text-center text-sm text-gray-500">
         © 2026 BusDirect
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
