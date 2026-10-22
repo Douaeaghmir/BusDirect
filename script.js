@@ -2,6 +2,9 @@ const nameInput = document.getElementById("nom");
 const seatSelect = document.getElementById("place")
 const reservationForm = document.getElementById("reservationForm");
 const seats = document.getElementsByClassName("seat");
+const recettelement = document.getElementById("recette");
+let recette = 0;
+let prix = 80;
 reservationForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const passengerName = nameInput.value.trim();
@@ -11,7 +14,8 @@ reservationForm.addEventListener("submit", function(event) {
         return;
     }
     for (let i = 0; i < seats.length; i++) {
-        if (seats[i].textContent.trim() === selectedSeat) {
+        if (seats[i].textContent.trim() === selectedSeat)
+            {
             if (seats[i].disabled) {
                 alert("Cette place est déjà réservée !")
                 return;
@@ -26,11 +30,12 @@ reservationForm.addEventListener("submit", function(event) {
                 "border-red-200",
                 "text-red-600"
             );
+            recette = recette + prix;
+            recettelement.textContent = recette;
             seats[i].disabled = true;
             alert("Réservation effectuée pour " + passengerName);
             reservationForm.reset();
             return;
         }
     }
-    alert("Place introuvable.");
 });
