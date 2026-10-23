@@ -50,6 +50,11 @@ reservationForm.addEventListener("submit", function (event) {
     }
     console.log(seatSelect.value);
 });
+
+
+
+
+
 const currentplace = document.getElementById("ancienne-place");
 const modiform = document.getElementById("Modifierform");
 const newplace = document.getElementById("nouvelle-place");
@@ -79,7 +84,6 @@ modiform.addEventListener("submit", function (event) {
         if (seats[i].textContent.trim() === chosingseat) {
             oldplace = seats[i];
         }
-
     }
     if (change.disabled) {
         alert("Cette place est déjà réservée !");
@@ -106,6 +110,7 @@ modiform.addEventListener("submit", function (event) {
         "border-red-200",
         "text-red-600"
     );
-    alert("Réservation effectuée");
     change.disabled = true;
+    alert("Réservation effectuée");
+    modiform.reset();
 });
