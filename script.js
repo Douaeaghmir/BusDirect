@@ -3,6 +3,8 @@ const seatSelect = document.getElementById("place")
 const reservationForm = document.getElementById("reservationForm");
 const seats = document.getElementsByClassName("seat");
 const recettelement = document.getElementById("recette");
+const dispoelement = document.getElementById("dispo");
+let dispo = 17;
 let recette = 0;
 let prix = 80;
 reservationForm.addEventListener("submit", function(event) {
@@ -30,6 +32,8 @@ reservationForm.addEventListener("submit", function(event) {
                 "border-red-200",
                 "text-red-600"
             );
+            dispo -= 1;
+            dispoelement.textContent = dispo;
             recette = recette + prix;
             recettelement.textContent = recette;
             seats[i].disabled = true;
