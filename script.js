@@ -114,3 +114,41 @@ modiform.addEventListener("submit", function (event) {
     alert("Réservation effectuée");
     modiform.reset();
 });
+
+
+const deleteseatform = document.getElementById("deleteseat");
+const inputplace = document.getElementById("place-suppression");
+
+deleteseatform.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let place = inputplace.value.trim();
+    let holder = null;
+    if(place === "")
+    {
+        alert("Numéro de siège actuel incorrect")
+        return;
+    }
+    for (let i = 0; i < seats.length; i++) {
+        if (seats[i].textContent.trim() === place) {
+            holder = seats[i];
+            break;
+        }
+    }
+    holder.disabled = false;
+    holder.classList.remove(
+        "bg-red-100",
+        "border-red-200",
+        "text-red-600"
+    );
+    holder.classList.add(
+        "bg-white",
+        "hover:bg-gray-100",
+        "border-gray-300"
+    );
+    dispo += 1;
+    dispoelement.textContent = dispo;
+    recette = recette - prix;
+    recettelement.textContent = recette;
+    alert("Votre place a été supprimée avec succès");
+});
