@@ -129,12 +129,10 @@
                     <input id="nom" type="text" placeholder="Votre nom"
                         class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
                 </div>
-
                 <div class="mb-3">
                     <label for="place" class="mb-1 block text-sm">Numéro de place</label>
-                    <select id="place"
-                        class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
-                        <option value="">Choisir une place</option>
+                    <select id="place" class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
+                        <option>Choisir une place</option>
                         <option>01</option>
                         <option>02</option>
                         <option>05</option>
@@ -168,18 +166,15 @@
 
            <hr class="my-5 border-gray-200">
             <h2 class="mb-4 text-lg font-semibold">Modifier une réservation</h2>
-
-            <form>
+            <form id="Modifierform">
                 <div class="mb-3">
                     <label for="ancienne-place" class="mb-1 block text-sm">Numéro de place actuel</label>
                     <input id="ancienne-place" type="number" placeholder="Exemple : 05"
                         class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
                 </div>
-
                 <div class="mb-3">
                     <label for="nouvelle-place" class="mb-1 block text-sm">Nouvelle place</label>
-                    <select id="nouvelle-place"
-                        class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
+                    <select id="nouvelle-place" class="w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none">
                         <option value="">Choisir une place</option>
                         <option>01</option>
                         <option>02</option>
@@ -225,6 +220,6 @@
         <footer class="bg-white p-4 text-center text-sm text-gray-500">
         © 2026 BusDirect
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
