@@ -1,25 +1,24 @@
-//reserve
 const nameInput = document.getElementById("nom");
 const seatSelect = document.getElementById("place")
 const reservationForm = document.getElementById("reservationForm");
 const seats = document.getElementsByClassName("seat");
 const recettelement = document.getElementById("recette");
 const dispoelement = document.getElementById("dispo");
+
 let dispo = 17;
-let recette = 0;
+let recette = 240;
 let prix = 80;
 
-//modif
-
-
-
+let reserve = JSON.parse(localStorage.getItem("reservations") || []);
+function reserve()
+{
 reservationForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const passengerName = nameInput.value.trim();
     const selectedSeat = seatSelect.value;
     if (passengerName === "" || selectedSeat === "") {
         alert("Veuillez saisir votre nom et choisir une place.");
-        return;
+        return;    
     }
     for (let i = 0; i < seats.length; i++) {
         if (seats[i].textContent.trim() === selectedSeat) {
@@ -50,15 +49,18 @@ reservationForm.addEventListener("submit", function (event) {
     }
     console.log(seatSelect.value);
 });
-
-
-
-
-
+}
+reserve()
+function savereserve()
+{
+    localStorage.setItem("reservations" , JSON.stringify(reserve));
+}
 const currentplace = document.getElementById("ancienne-place");
 const modiform = document.getElementById("Modifierform");
 const newplace = document.getElementById("nouvelle-place");
 
+function changer()
+{
 modiform.addEventListener("submit", function (event) {
     event.preventDefault();
     const chosingseat = currentplace.value.trim();
@@ -114,11 +116,13 @@ modiform.addEventListener("submit", function (event) {
     alert("Réservation effectuée");
     modiform.reset();
 });
-
-
+}
+changer()
 const deleteseatform = document.getElementById("deleteseat");
 const inputplace = document.getElementById("place-suppression");
 
+function suppression()
+{
 deleteseatform.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -134,6 +138,10 @@ deleteseatform.addEventListener("submit", function (event) {
             holder = seats[i];
             break;
         }
+    }
+    if (holder === null || holder.disabled === false) {
+    alert("Cette place n'est pas réservée !");
+    return;
     }
     holder.disabled = false;
     holder.classList.remove(
@@ -152,3 +160,5 @@ deleteseatform.addEventListener("submit", function (event) {
     recettelement.textContent = recette;
     alert("Votre place a été supprimée avec succès");
 });
+}
+suppression()
