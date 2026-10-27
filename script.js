@@ -19,6 +19,14 @@ function reserves() {
             alert("Veuillez saisir votre nom et choisir une place.");
             return;
         }
+            for (let i = 0; i < reservations.length; i++) 
+            {
+                if (reservations[i].name.toLowerCase() === passengerName.toLowerCase()) 
+                {
+                    alert("Ce nom possède déjà une réservation !");
+                    return;
+                }
+            }
         for (let i = 0; i < seats.length; i++) {
             if (seats[i].textContent.trim() === selectedSeat) {
                 if (seats[i].disabled) {
@@ -46,14 +54,6 @@ function reserves() {
                     seat: selectedSeat
                 });
                 savereserve();
-                for (let i = 0; i < reservations.length; i++) 
-                {
-                    if (reservations[i].name.toLowerCase() === passengerName.toLowerCase()) 
-                    {
-                        alert("Ce nom possède déjà une réservation !");
-                        return;
-                    }
-                }
                 alert("Réservation effectuée pour " + passengerName);
                 reservationForm.reset();
                 return;
