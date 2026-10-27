@@ -7,6 +7,8 @@ const dispoelement = document.getElementById("dispo");
 
 let dispo = 17;
 let recette = 240;
+
+
 let prix = 80;
 const all = {};
 let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
