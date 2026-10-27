@@ -29,7 +29,7 @@ Le projet a été réalisé dans le cadre d'un apprentissage du développement w
 ### 1. Cloner le dépôt
 
 ```bash
-git clone <URL_DE_VOTRE_DEPOT>
+git clone git@github.com:Douaeaghmir/BusDirect.git
 ```
 
 ### 2. Accéder au projet
