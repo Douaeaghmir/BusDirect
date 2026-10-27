@@ -9,8 +9,8 @@ let dispo = 17;
 let recette = 240;
 let prix = 80;
 
-let reserve = JSON.parse(localStorage.getItem("reservations") || []);
-function reserve()
+let reservations = JSON.parse(localStorage.getItem("reservations") )|| [];
+function reserves()
 {
 reservationForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -42,6 +42,11 @@ reservationForm.addEventListener("submit", function (event) {
             recette = recette + prix;
             recettelement.textContent = recette;
             seats[i].disabled = true;
+            reservations.push({
+                name : passengerName,
+                seat : selectedSeat
+                 });
+                 savereserve();
             alert("Réservation effectuée pour " + passengerName);
             reservationForm.reset();
             return;
@@ -50,10 +55,10 @@ reservationForm.addEventListener("submit", function (event) {
     console.log(seatSelect.value);
 });
 }
-reserve()
+reserves()
 function savereserve()
 {
-    localStorage.setItem("reservations" , JSON.stringify(reserve));
+    localStorage.setItem("reservations" , JSON.stringify(reservations));
 }
 const currentplace = document.getElementById("ancienne-place");
 const modiform = document.getElementById("Modifierform");
@@ -113,6 +118,15 @@ modiform.addEventListener("submit", function (event) {
         "text-red-600"
     );
     change.disabled = true;
+    for(let i = 0 ; i < reservations.length ; i++)
+    {
+        if(reservations[i].seat == chosingseat)
+        {
+            reservations[i].seat = modiplace;
+            break
+        }
+    }
+    savereserve();
     alert("Réservation effectuée");
     modiform.reset();
 });
@@ -158,6 +172,15 @@ deleteseatform.addEventListener("submit", function (event) {
     dispoelement.textContent = dispo;
     recette = recette - prix;
     recettelement.textContent = recette;
+    for(let i = 0; i < reservations.length ; i++)
+    {
+        if(reservations[i].seat == place)
+        {
+            reservations.splice(i , 1);
+            break;
+        }
+    }
+    savereserve();
     alert("Votre place a été supprimée avec succès");
 });
 }
